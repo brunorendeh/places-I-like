@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Places I Like</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Announcement Bar -->
+    <div class="announcement-bar">
+        <p>A personal guide to restaurants, bars & cafes I love.</p>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="#" class="nav-logo">PLACES I LIKE</a>
+            <ul class="nav-links">
+                <li><a href="#" class="nav-link active" data-filter="all">All</a></li>
+                <li><a href="#" class="nav-link" data-filter="restaurant">Restaurants</a></li>
+                <li><a href="#" class="nav-link" data-filter="bar">Bars</a></li>
+                <li><a href="#" class="nav-link" data-filter="cafe">Cafes</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="nav-btn" id="search-toggle" aria-label="Search">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                </button>
+            </div>
+        </div>
+        <!-- Search bar (hidden by default) -->
+        <div class="search-bar" id="search-bar">
+            <input type="text" id="search-input" placeholder="Search places...">
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <h1 class="hero-title">My curated guide to<br>the best spots in town.</h1>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Category Label -->
+        <div class="section-header" id="section-header">
+            <h2 class="section-title" id="section-title">All Places</h2>
+            <span class="section-count" id="section-count"></span>
+        </div>
+
+        <!-- Card Grid -->
+        <div class="grid" id="places-grid">
+            <div class="empty-state" id="empty-state">
+                <p class="empty-text">Coming soon.</p>
+                <p class="empty-sub">Places are being curated.</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <span class="footer-logo">PLACES I LIKE</span>
+            <p class="footer-note">A personal collection of favorite restaurants, bars & cafes.</p>
+        </div>
+    </footer>
+
+    <!-- Detail Modal -->
+    <div class="modal-overlay" id="detail-overlay">
+        <div class="modal modal-detail">
+            <button class="modal-close" id="detail-close">&times;</button>
+            <div id="detail-content"></div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
