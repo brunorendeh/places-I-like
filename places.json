@@ -1,1 +1,11 @@
-[]
+[
+  {
+    "name": "Bodega Casas",
+    "category": "restaurant",
+    "neighborhood": "Gràcia",
+    "description": "Try the meatballs.",
+    "tags": ["bodega"],
+    "maps": "https://maps.app.goo.gl/85yafanDtWgo5kQH7",
+    "image": "images/bodega-casas.jpg"
+  }
+]
