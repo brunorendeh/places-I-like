@@ -78,6 +78,7 @@ function openDetail(place) {
             ${place.neighborhood ? `<div class="detail-location">${escapeHTML(place.neighborhood)}</div>` : ''}
             ${place.description ? `<p class="detail-description">${escapeHTML(place.description)}</p>` : ''}
             ${tagsHTML}
+            ${place.maps ? `<a class="detail-maps-link" href="${escapeHTML(place.maps)}" target="_blank" rel="noopener noreferrer"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> View on Google Maps</a>` : ''}
         </div>
     `;
 
@@ -156,10 +157,14 @@ function createCard(place) {
         <h3 class="card-title">${escapeHTML(place.name)}</h3>
         ${place.neighborhood ? `<p class="card-subtitle">${escapeHTML(place.neighborhood)}</p>` : ''}
         ${tagsHTML ? `<div class="card-meta">${tagsHTML}</div>` : ''}
+        ${place.maps ? `<a class="card-maps-link" href="${escapeHTML(place.maps)}" target="_blank" rel="noopener noreferrer"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Map</a>` : ''}
         <span class="card-read-more">Read More</span>
     `;
 
-    card.addEventListener('click', () => openDetail(place));
+    card.addEventListener('click', (e) => {
+        if (e.target.closest('.card-maps-link')) return;
+        openDetail(place);
+    });
 
     return card;
 }
